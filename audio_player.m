@@ -31,10 +31,10 @@ function audio_player_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for audio_player
 handles.output = hObject;
 
-[y, Fs] = audioread('./bird.wav');
-handles.length = length(y);
-handles.player = audioplayer(y, Fs);
-handles.next_position = -1;
+% [y, Fs] = audioread('./bird.wav');
+% handles.length = length(y);
+% handles.player = audioplayer(y, Fs);
+% handles.next_position = -1;
 
 % Update handles structure
 guidata(hObject, handles);
@@ -95,18 +95,18 @@ function play_Callback(hObject, eventdata, handles)
 % hObject    handle to play (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+song_name='';
 
-v = get(handles.popupmenu1,'Value'); %get currently selected option from menu
-if v == 1
- odetojoy()
-elseif v == 2
-    odeto2()
-elseif v == 3
-    mornmood()
-elseif v == 4
-      furelise()
-end
-
+value = get(handles.popupmenu1,'Value'); %get currently selected option from menu
+        [song_name,song_vector,fs]=resolve_song(value);
+   
+    
+audiowrite(song_name,song_vector,fs); 
+  [y, Fs] = audioread(song_name);
+handles.length = length(y);
+handles.player = audioplayer(y, Fs);
+handles.next_position = -1;
+    
 if strcmp(get(handles.player, 'Running'), 'off')
     if handles.next_position >= 0
         play(handles.player, handles.next_position);
