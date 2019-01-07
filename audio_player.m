@@ -96,6 +96,17 @@ function play_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+v = get(handles.popupmenu1,'Value'); %get currently selected option from menu
+if v == 1
+ odetojoy()
+elseif v == 2
+    odeto2()
+elseif v == 3
+    mornmood()
+elseif v == 4
+      furelise()
+end
+
 if strcmp(get(handles.player, 'Running'), 'off')
     if handles.next_position >= 0
         play(handles.player, handles.next_position);

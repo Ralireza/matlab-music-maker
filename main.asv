@@ -25,6 +25,6 @@ for i=1:size(nf')
 end
 % plot(x)
 % SUMtemp+1:SUMnew+1
-% audiowrite('song.wav',x,fs); 
+audiowrite('song.wav',x,fs); 
 plot(x)
-sound(x, fs) 
+ 
