@@ -1,8 +1,6 @@
 clc
 clear
-notes()
 
-odetojoy()
 
 fs=1000;
 x=[];
@@ -23,8 +21,5 @@ for i=1:size(nf')
     x=[x;square'];
 
 end
-% plot(x)
-% SUMtemp+1:SUMnew+1
-audiowrite('song.wav',x,fs); 
 plot(x)
  

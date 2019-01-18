@@ -18,9 +18,9 @@ if v == 1
 end
 
 
-fs=1000;
+fs=10000;
 x=[];
-SUMnew=0;
+SUMnew=0; 
 
 for i=1:size(nf')
     tt=0:(1./fs):(TD./nd(i));
@@ -32,11 +32,14 @@ for i=1:size(nf')
         square=square+harmonic;
 
     end
-         square= square .* exp(-tt);
+         square= square .* exp(10*-tt);
+       
 
     x=[x;square'];
 
 end
+% x=movmean(x,10)
+
 plot(x)
  song_vector=x;
 
