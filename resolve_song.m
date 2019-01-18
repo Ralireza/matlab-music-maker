@@ -1,24 +1,24 @@
-function [song_name,song_vector,fs] = resolve_song(v)
+function [song_name,song_vector,fs] = resolve_song(songe_name,custom_fs)
 
 
 notes()
 
-if v == 1
+if songe_name == 1
         odetojoy()
         song_name='odetojoy.wav';
-    elseif v == 2
+    elseif songe_name == 2
         odeto2()
         song_name='odeto2.wav';
-    elseif v == 3
+    elseif songe_name == 3
         mornmood()
         song_name='mornmood.wav';
-    elseif v == 4
+    elseif songe_name == 4
         furelise()
         song_name='furelise.wav';
 end
 
 
-fs=10000;
+fs=costum_fs;
 x=[];
 SUMnew=0; 
 
