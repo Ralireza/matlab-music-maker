@@ -18,7 +18,7 @@ if songe_name == 1
 end
 
 
-fs=costum_fs;
+fs=custom_fs;
 x=[];
 SUMnew=0; 
 

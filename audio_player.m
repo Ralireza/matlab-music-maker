@@ -98,8 +98,8 @@ function play_Callback(hObject, eventdata, handles)
 song_name='';
 
 value_popupmenu1 = get(handles.popupmenu1,'Value'); %get currently selected option from menu
-value_popupmenu1=
-        [song_name,song_vector,fs]=resolve_song(value_popupmenu1);
+value_custom_fs=get(handles.edit1,'Value')
+        [song_name,song_vector,fs]=resolve_song(value_popupmenu1,value_custom_fs);
    
     
 audiowrite(song_name,song_vector,fs); 
