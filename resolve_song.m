@@ -24,18 +24,18 @@ SUMnew=0;
 
 for i=1:size(nf')
     tt=0:(1./fs):(TD./nd(i));
-    square = na(i)*sin(2*pi*nf(i)*tt);
+    mynote = na(i)*sin(2*pi*nf(i)*tt);
    
 
     for num=2:12
         harmonic = ((1/num)*na(i))*sin(2*pi*(nf(i)*num)*tt); 
-        square=square+harmonic;
+        mynote=mynote+harmonic;
 
     end
-         square= square .* exp(10*-tt);
+         mynote= mynote .* exp(10*-tt);
        
 
-    x=[x;square'];
+    x=[x;mynote'];
 
 end
 % x=movmean(x,10)
